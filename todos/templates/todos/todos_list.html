@@ -1,0 +1,16 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+    <h1>Todo List</h1>
+
+    <div class="todos">
+        {% for todo in todos %}
+        <div class="todo">
+            <h2><a href="{% url 'todos:detail' todo.id %}">{{ todo.title}}</a></h2>
+            <h3>{{ todo.title }}</h3>
+            <p>{{ todo.body }}</p>
+            <p>{{ todo.date }}</p>
+            <p class="creater">Added by {{ todo.creater.username }}</p>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

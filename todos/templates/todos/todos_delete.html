@@ -1,0 +1,11 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+    <h1>Delete Todo</h1>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <h2>Are you sure you want to delete {{ todos.title}}</h2>
+        <button type="submit">Delete</button>
+    </form>
+
+{% endblock %}

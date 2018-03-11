@@ -1,0 +1,15 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+    <h1>New/Update Todo</h1>
+    
+    <form method="POST">
+        {% csrf_token %}
+        {{form}}
+        <p>
+        <button class="btn btn-primary" type="submit">Save</button></p>
+    </form>
+
+    {% if todos %}
+    <h3><a href="{% url 'todos:delete' todos.id %}">Delete TODO</a></h3>
+    {% endif %}
+{% endblock %}

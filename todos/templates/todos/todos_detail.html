@@ -1,0 +1,15 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+{% load static from staticfiles %}
+<div class="detail_todos">
+  <div class="todo">
+    
+     <h2><a href="{% url 'todos:update' todos.id %}">update TODO</a></h2>
+        <h3>{{ todos.title }}</h3>    
+  <!-- <img src="{% static 'one.jpeg' %}" alt="img not found">-->
+    <p>{{ todos.body }}</p>
+    <p>{{ todos.date }}</p>
+    <p class="creater">Added by {{ todos.creater.username}}</p>
+</div>
+</div>
+{% endblock %}
